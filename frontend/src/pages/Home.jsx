@@ -867,7 +867,7 @@ function Home() {
           width: "60px",
           height: "60px",
           borderRadius: "50%",
-          backgroundColor: "#34D399",
+          backgroundColor: "black",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -907,7 +907,7 @@ function Home() {
         <div
           style={{
             padding: "1rem",
-            backgroundColor: "#34D399",
+            backgroundColor: "black",
             color: "white",
             display: "flex",
             justifyContent: "space-between",
@@ -956,7 +956,7 @@ function Home() {
                 maxWidth: "80%",
                 padding: "0.75rem 1rem",
                 borderRadius: message.sender === "user" ? "18px 18px 4px 18px" : "18px 18px 18px 4px",
-                backgroundColor: message.sender === "user" ? "#34D399" : "#f0f0f0",
+                backgroundColor: message.sender === "user" ? "black" : "#f0f0f0",
                 color: message.sender === "user" ? "white" : "black",
               }}
             >
@@ -1038,7 +1038,7 @@ function Home() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             style={{
-              backgroundColor: "#34D399",
+              backgroundColor: "black",
               color: "white",
               borderRadius: "50%",
               width: "40px",

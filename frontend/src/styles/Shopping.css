@@ -1,16 +1,78 @@
 /* === Global Styles === */
+/* Add these new styles at the beginning of your existing CSS file */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  z-index: 1000;
+}
+
+.loading-logo {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.loading-circle {
+  animation: rotate 2s linear infinite;
+  transform-origin: center;
+}
+
+.loading-leaf {
+  animation: grow 1.5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-top: 15px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Your existing CSS styles continue below */
 :root {
-  --primary-color: #4CAF50;
-  --primary-dark: #388E3C;
-  --primary-light: #C8E6C9;
-  --accent-color: #8BC34A;
-  --text-color: #263238;
-  --background-color: #F9FBF9;
+  --primary-color: #333333;
+  --primary-dark: #1a1a1a;
+  --primary-light: #e6e6e6;
+  --accent-color: #666666;
+  --text-color: #262626;
+  --background-color: #f9f9f9;
   --card-color: #FFFFFF;
   --border-color: #E0E0E0;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --success-color: #66BB6A;
-  --error-color: #F44336;
+  --success-color: #404040;
+  --error-color: #808080;
   --border-radius: 8px;
   --transition-speed: 0.3s;
 }
@@ -120,7 +182,7 @@ button {
 .eco-badge {
   display: flex;
   align-items: center;
-  background-color: rgba(76, 175, 80, 0.9);
+  background-color: rgba(51, 51, 51, 0.9);
   color: white;
   font-size: 0.7rem;
   padding: 3px 8px;
@@ -164,7 +226,7 @@ button {
 }
 
 .product-rating {
-  color: #FFC107;
+  color: #666666;
 }
 
 .product-actions {
@@ -204,9 +266,9 @@ button {
 }
 
 .add-to-wishlist:hover {
-  background-color: #FFEBEE;
-  color: #E91E63;
-  border-color: #E91E63;
+  background-color: #f5f5f5;
+  color: #666666;
+  border-color: #666666;
 }
 
 /* === Filter System === */
@@ -283,19 +345,19 @@ button {
 }
 
 .wishlist-toggle.has-items {
-  background-color: #FFEBEE;
+  background-color: var(--primary-light);
 }
 
 .wishlist-icon {
   font-size: 1.5rem;
-  color: #E91E63;
+  color: #666666;
 }
 
 .wishlist-count {
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: #E91E63;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 50%;
   width: 22px;
@@ -413,7 +475,7 @@ button {
 }
 
 .remove-item:hover {
-  background-color: #FFEBEE;
+  background-color: #f5f5f5;
   color: var(--error-color);
 }
 
@@ -622,7 +684,7 @@ button {
 }
 
 .eco-impact {
-  background-color: #E8F5E9;
+  background-color: #f5f5f5;
   padding: 15px;
   margin: 15px 10px;
   border-radius: var(--border-radius);
@@ -756,7 +818,7 @@ button {
 .eco-options {
   margin: 20px 0;
   padding: 15px;
-  background-color: #E8F5E9;
+  background-color: #f5f5f5;
   border-radius: var(--border-radius);
 }
 
@@ -810,7 +872,7 @@ button {
 }
 
 .complete-btn:hover {
-  background-color: #43A047;
+  background-color: #333333;
 }
 
 /* === Order Success === */
@@ -852,14 +914,14 @@ button {
 
 .order-success h3 {
   font-size: 1.5rem;
-  color: var(--success-color);
+  color: var(--primary-dark);
   margin-bottom: 10px;
 }
 
 .eco-impact-message {
   display: flex;
   align-items: center;
-  background-color: #E8F5E9;
+  background-color: #f5f5f5;
   padding: 10px 15px;
   border-radius: var(--border-radius);
   margin-top: 20px;
@@ -956,6 +1018,25 @@ button {
   }
 }
 
+/* === Shopping Page === */
+.shopping-page {
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.shop-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
 /* === Responsive Design === */
 @media (max-width: 768px) {
   .cart-panel,
@@ -1015,112 +1096,4 @@ button {
     flex-direction: column;
     gap: 10px;
   }
-}
-
-.shopping-page {
-  padding: 2rem;
-  background: #f4f8f5;
-}
-
-.shop-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  position: relative;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
-}
-
-.product-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.product-info {
-  padding: 1rem;
-}
-
-.product-name {
-  font-size: 1.25rem;
-  color: #222;
-  margin-bottom: 0.5rem;
-}
-
-.product-price {
-  font-weight: bold;
-  color: #2e7d32;
-  margin-bottom: 0.5rem;
-}
-
-.eco-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.eco-tag {
-  background: #e8f5e9;
-  color: #388e3c;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.product-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.add-to-cart,
-.wishlist-btn {
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.add-to-cart {
-  background: #2e7d32;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.add-to-cart:hover {
-  background: #1b5e20;
-}
-
-.wishlist-btn {
-  background: transparent;
-  color: #f44336;
-}
-
-.wishlist-btn:hover {
-  transform: scale(1.2);
 }
