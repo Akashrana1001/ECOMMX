@@ -20,10 +20,32 @@ Built with **React**, **Node.js**, and powered by the **Gemini API**, it support
 - **Frontend:** React, HTML5, CSS3, JavaScript
 - **Backend:** Node.js, Express
 - **API:** Gemini API
-- **Database:** MongoDB (if used)
-- **Hosting:** (e.g. Vercel, Render, or your choice)
 
 ---
 
 ## 📂 Folder Structure
+ECOMMX/ 
+├── frontend/ # React frontend 
+├── backend/server/
+
+
+---
+
+## 🚀 Getting Started
+```bash
+git clone https://github.com/Akashrana1001/ECOMMX.git
+cd ECOMMX
+cd frontend
+npm install
+
+cd ../backend/server
+npm install
+
+# In /frontend
+npm start
+
+# In /backend/server
+node server.js
+
+
 
