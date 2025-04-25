@@ -12,7 +12,7 @@ app.use(express.json());
 // Initialize OpenAI with a free alternative API key
 const openai = new OpenAI({
 
-  apiKey: process.env.OPENAI_API_KEY || 'AIzaSyBxyAFpFYea-M1qM5H09JkxQ6_zln489fg',
+  apiKey: process.env.OPENAI_API_KEY || 'YOUR-API-KEY',
   baseURL: 'https://api.free-ai-provider.com/v1', // Replace with actual free AI API endpoint
 });
 
