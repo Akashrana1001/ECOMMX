@@ -18,15 +18,13 @@ Built with **React**, **Node.js**, and powered by the **Gemini API**, it support
 ## 🛠️ Tech Stack
 
 - **Frontend:** React, HTML5, CSS3, JavaScript
-- **Backend:** Node.js, Express
-- **API:** Gemini API
 
 ---
 
 ## 📂 Folder Structure
 ECOMMX/ 
 ├── frontend/ # React frontend 
-├── backend/server/
+
 
 
 ---
@@ -38,14 +36,11 @@ cd ECOMMX
 cd frontend
 npm install
 
-cd ../backend/server
-npm install
+
 
 # In /frontend
 npm start
 
-# In /backend/server
-node server.js
 
 
 
